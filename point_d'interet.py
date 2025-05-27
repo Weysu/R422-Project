@@ -11,37 +11,30 @@ img2 = cv2.imread(img2_path, cv2.IMREAD_GRAYSCALE)
 
 # Vérification du chargement
 if img1 is None or img2 is None:
-    print("ERREUR: Impossible de charger les images. Vérifiez les chemins:")
-    print(f"Image 1: {img1_path}")
-    print(f"Image 2: {img2_path}")
+    print("ERREUR: Impossible de charger les images.")
     exit()
 
-# Initialisation ORB
-orb = cv2.ORB_create()
+sift = cv2.SIFT_create()
+kp1, des1 = sift.detectAndCompute(img1, None)
+kp2, des2 = sift.detectAndCompute(img2, None)
 
-# Détection des points clés
-kp1, des1 = orb.detectAndCompute(img1, None)
-kp2, des2 = orb.detectAndCompute(img2, None)
+if des1 is None or des2 is None:
+    print("ERREUR: Aucun descripteur trouvé.")
+    exit()
 
-# Appariement
-bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
-matches = bf.match(des1, des2)
-matches = sorted(matches, key=lambda x: x.distance)
+bf = cv2.BFMatcher()
+matches = bf.knnMatch(des1, des2, k=2)
 
-# Affichage des 10 meilleurs matches
-result_img = cv2.drawMatches(
-    img1, kp1, img2, kp2, 
-    matches[:10], 
-    None, 
-    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS
-)
+# Filtrage avec ratio test
+good = [m for m, n in matches if m.distance < 0.75 * n.distance]
 
-# Conversion BGR vers RGB pour matplotlib
-result_img_rgb = cv2.cvtColor(result_img, cv2.COLOR_BGR2RGB)
+# Dessiner les correspondances
+result_img = cv2.drawMatches(img1, kp1, img2, kp2, good[:10], None)
 
 # Affichage
+result_img_rgb = cv2.cvtColor(result_img, cv2.COLOR_BGR2RGB)
 plt.figure(figsize=(15, 8))
 plt.imshow(result_img_rgb)
 plt.axis('off')
-plt.title("Top 10 correspondances ORB entre les images")
+plt.title("Top 10 correspondances SIFT entre les images")
 plt.show()
