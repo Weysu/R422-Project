@@ -15,3 +15,10 @@ pour ce faire nous devons arriver à plusieurs étapes clés :
 - Point d'intérêt 
 - Triangulation 
 - Nuage de points
+
+### How to use 
+Linux only est pur le controle des caméras il faut donc donc le bon environnement 
+
+Le reste peut s'excuter depuis n'importe quelle système d'exploitation, a condition d'avoir les librairies.
+
+Je me base sur les photos qui sont dans le depot.
