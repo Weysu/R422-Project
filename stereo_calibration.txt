@@ -1,0 +1,28 @@
+=== STEREO CALIBRATION PARAMETERS ===
+
+ROTATION MATRIX (R):
+    0.999484    -0.009383    -0.030720
+    0.009435     0.999954     0.001570
+    0.030704    -0.001859     0.999527
+
+TRANSLATION VECTOR (T) [mm]:
+ -307.290842
+  -69.691681
+  -37.504608
+
+ESSENTIAL MATRIX (E):
+   -1.785947    37.632461   -69.599815
+  -28.050190    -0.219415   308.297576
+   66.756333  -307.930676    -2.623427
+
+FUNDAMENTAL MATRIX (F):
+   -0.000000     0.000001    -0.004506
+   -0.000001    -0.000000     0.018518
+    0.004182    -0.018434     1.000000
+
+IMAGE SIZE (width x height):
+1920 1080
+
+=== ADDITIONAL INFO ===
+Baseline (distance between cameras): 317.32 mm
+Rotation angles (Roll, Pitch, Yaw) [degrees]: -0.11, -1.76, 0.54

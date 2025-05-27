@@ -1,0 +1,23 @@
+=== MONO CAMERA CALIBRATION PARAMETERS ===
+
+CAMERA MATRIX (Intrinsic Matrix):
+ 2815.542455     0.000000   871.895586
+    0.000000  2809.988076   601.377196
+    0.000000     0.000000     1.000000
+
+DISTORTION COEFFICIENTS:
+   -0.250978     0.372884    -0.001291    -0.003697    -0.686750
+
+IMAGE SIZE (width x height):
+1920 1080
+
+=== INDIVIDUAL PARAMETERS ===
+Focal length X (fx): 2815.542455
+Focal length Y (fy): 2809.988076
+Principal point X (cx): 871.895586
+Principal point Y (cy): 601.377196
+Radial distortion k1: -0.250978
+Radial distortion k2: 0.372884
+Tangential distortion p1: -0.001291
+Tangential distortion p2: -0.003697
+Radial distortion k3: -0.686750
