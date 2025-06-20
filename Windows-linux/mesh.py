@@ -28,4 +28,4 @@ o3d.visualization.draw_geometries([mesh], mesh_show_back_face=True)
 
 # 5. Sauvegarde en fichier .ply
 o3d.io.write_triangle_mesh("mesh_reconstruit.ply", mesh)
-print("✅ Mesh sauvegardé dans 'mesh_reconstruit.ply'")
+print("Mesh sauvegardé dans 'mesh_reconstruit.ply'")
